@@ -3,29 +3,47 @@ package com.mark.carpark;
 public class Car {
 
 	private String brand;
+	private String type;
+	private Double engine;
+	private Integer topSpeed;
+	private TireType tire;
 
-	private Integer mileage;
-
-	public Car(String brand, Integer mileage) {
+	public Car(String brand, String type, Double engine, Integer topSpeed) {
 		this.brand = brand;
-		this.mileage = mileage;
-	}
+		this.type = type;
+		this.engine = engine;
+		this.topSpeed = topSpeed;
 
-	public void print() {
-		System.out.println(this);
+		if (topSpeed > 200) {
+			this.tire = TireType.HighSpeed;
+		} else {
+			this.tire = TireType.LowSpeed;
+		}
 	}
 
 	public String getBrand() {
 		return brand;
 	}
 
-	public Integer getMileage() {
-		return mileage;
+	public String getType() {
+		return type;
 	}
 
+	public Double getEngine() {
+		return engine;
+	}
+
+	public Integer getTopSpeed() {
+		return topSpeed;
+	}
+
+	public TireType getTire() {
+		return tire;
+	}
+	
 	@Override
 	public String toString() {
-		return brand + ", " + mileage;
+		return brand + ", " + type + ", " + engine + ", " + topSpeed + ", " + tire;
 	}
 
 }

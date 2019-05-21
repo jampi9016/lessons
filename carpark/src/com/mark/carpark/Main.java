@@ -1,17 +1,62 @@
 package com.mark.carpark;
 
+import java.util.ArrayList;
+import java.util.Iterator;
+import java.util.List;
+
 public class Main {
-
+	
 	public static void main(String[] args) {
+		Car a = new Car("BMW", "E36", 1.6, 207);
+		Car b = new Car("Audi", "A5", 2.0, 199);
+		
+		List<Car> carpark = new ArrayList<Car>();
+		carpark.add(a);
+		carpark.add(b);
+		carpark.add(new Car("Mazda", "6", 2.5, 250));
+		
+//		Iterator<Car> iterator = carpark.iterator();
+//		while (iterator.hasNext()) {
+//			System.out.println(iterator.next());			
+//		}
+		
+		for (Car car : carpark) {
+			System.out.println(car);
+		}
+	
+//		=============================
+//		
+//		for (int i = 0; i < carpark.size(); i++) {
+//			System.out.println(carpark.get(i));
+//		}
 
-		Car a = new Car("BMW", 15600);
-		Car b = new Car("Audi", 200000);
+//		=============================
+//		
+//		Car[] carpark = { a, b };
+//		
+//		for (int i = 0; i < carpark.length; i++) {
+//			System.out.println(carpark[i]);				
+//		}
 		
-		a.print();
-		b.print();
+//		=============================
+//		
+//		Car[] carpark = new Car[5];
+//		
+//		carpark[0] = a;
+//		carpark[1] = b;
+//		
+//		for (int i = 0; i < carpark.length; i++) {
+//			if (carpark[i] != null) {
+//				System.out.println(carpark[i]);	
+//			}
+//			
+//		}
+
+//		=============================
+//		
 		
-		System.out.println("My A car is: " + a);
-		System.out.println("My B car is: " + b);
+//		System.out.println("My A car is: " + a.toString());
+//		System.out.println("My B car is: " + b);
 		
 		
 //		System.out.println(a.getBrand() + ", " + a.getMileage());
